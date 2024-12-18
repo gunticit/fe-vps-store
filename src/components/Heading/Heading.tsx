@@ -22,7 +22,7 @@ export function Heading({
     <Component
       {...props}
       className={clsx(
-        'font-sans font-bold text-zinc-100',
+        'font-sans font-bold text-[#7E1891]',
         {
           'text-lg': size === 'sm',
           'text-xl': size === 'md',

@@ -22,7 +22,7 @@ export function Text({
     <Component
       {...props}
       className={clsx(
-        'font-sans text-zinc-100',
+        'font-sans text-black',
         {
           'text-sm': size === 'sm',
           'text-md': size === 'md',

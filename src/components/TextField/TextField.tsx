@@ -56,7 +56,7 @@ const TextFieldInput = React.forwardRef(
         {...props}
         ref={ref}
         className={clsx(
-          'w-full h-12 px-4 font-sans text-md rounded bg-zinc-800 text-zinc-100 placeholder:text-zinc-400 focus-within:ring-2 ring-primary-600 appearance-none outline-none disabled:cursor-not-allowed disabled:opacity-50',
+          'w-full h-14 px-4 font-sans text-md rounded text-black placeholder:text-zinc-400  focus-within:ring-1 ring-blue-400 appearance-none outline-none disabled:cursor-not-allowed disabled:opacity-50',
           props.className,
         )}
       />

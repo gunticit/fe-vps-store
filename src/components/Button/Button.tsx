@@ -21,7 +21,7 @@ export function Button({
     <Component
       {...props}
       className={clsx(
-        'px-5 py-4 text-md font-semibold rounded outline-none bg-primary-600 hover:bg-primary-500 text-white disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-zinc-600',
+        'px-5 py-2 text-md font-semibold rounded outline-none bg-primary-600 hover:bg-primary-500 text-white disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-zinc-600',
         className,
       )}
     >
