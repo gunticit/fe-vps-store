@@ -1,13 +1,12 @@
 import Link from 'next/link'
-import Button from '@/components/Button'
-import Heading from '@/components/Heading'
-import Text from '@/components/Text'
-import TextField from '@/components/TextField'
+import Button from '@/components/ui/Button'
+import Heading from '@/components/ui/Heading'
+import Text from '@/components/ui/Text'
+import TextField from '@/components/ui/TextField'
 import { useAuth } from '@/hooks/useAuth'
 import { SignInData } from '@/types/auth'
 import { parseCredentials } from '@/utils/cookies'
 import { yupResolver } from '@hookform/resolvers/yup'
-// import { EnvelopeSimple, Lock } from 'phosphor-react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { GetServerSideProps } from 'next'
 import * as yup from 'yup'
@@ -16,10 +15,6 @@ const SignInFormSchema = yup.object().shape({
   email: yup.string().required(),
   password: yup.string().min(4).required(),
 })
-// const fakeUser = [
-//   { email: 'manh@gmail.com', password: '12345678' },
-//   { email: 'nguyenhai@gmail.com', password: '12345678' },
-// ]
 export default function SignIn() {
   const { signIn } = useAuth()
   const { register, handleSubmit, formState } = useForm<SignInData>({
@@ -30,16 +25,6 @@ export default function SignIn() {
   const { isValid } = formState
   const onSubmit: SubmitHandler<SignInData> = async ({ email, password }) => {
     await signIn({ email, password })
-    // const user = fakeUser.find(
-    //   (user) => user.email === email && user.password === password,
-    // )
-
-    // if (user) {
-    //   alert('Đăng nhập thành công!')
-    //   router.push('/')
-    // } else {
-    //   alert('Email hoặc mật khẩu không chính xác!')
-    // }
   }
 
   return (
