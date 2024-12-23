@@ -18,5 +18,37 @@ module.exports = {
         },
       },
     },
+    screens: {
+      hg: {
+        min: '1921px',
+      },
+      xgg: {
+        max: '1920px',
+      },
+      gg: {
+        max: '1739px',
+      },
+      xxl: {
+        max: '1535px',
+      },
+      xl: {
+        max: '1279px',
+      },
+      lg: {
+        max: '1023px',
+      },
+      md: {
+        max: '767px',
+      },
+      sm: {
+        max: '639px',
+      },
+      xs: {
+        max: '479px',
+      },
+      xxs: {
+        max: '364px',
+      },
+    },
   },
 }
