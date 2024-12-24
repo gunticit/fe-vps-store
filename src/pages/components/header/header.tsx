@@ -1,11 +1,11 @@
 import TextField from '@/components/ui/TextField'
 import { PiListBold } from 'react-icons/pi'
-import { TbApps } from 'react-icons/tb'
 import { LuSettings } from 'react-icons/lu'
 import { HiOutlineAdjustments } from 'react-icons/hi'
 import SearchBar from './SearchBar'
 import Notifications from './Notifications'
 import Languages from './Languages'
+import NavbarMenu from './NavbarMenu'
 interface HeaderProps {
   onMenuToggle: () => void
 }
@@ -35,9 +35,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
         </div>
       </div>
       <div className="flex items-center space-x-4 z-20">
-        <button className="p-2 rounded-lg bg-violet-200 text-violet-900 hover:bg-violet-900 hover:text-white">
-          <TbApps />
-        </button>
+        <NavbarMenu />
         <div className="z-20">
           <Languages />
         </div>

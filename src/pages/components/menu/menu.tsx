@@ -5,7 +5,7 @@ import DashboardMenu from './DashboardMenu'
 
 export default function Menu() {
   return (
-    <aside className="bg-white w-64 h-fit p-4 space-y-4 overflow-y-scroll md:w-64 xl:h-screen pb-48">
+    <aside className="bg-white w-64 h-fit p-4 space-y-4 overflow-y-scroll md:w-64 xl:h-screen pb-28">
       <DashboardMenu />
       <ServiceMenu title="Dịch vụ" />
       <UtilityMenu title="Tiện ích" />
