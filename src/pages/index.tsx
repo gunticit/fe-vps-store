@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Menu from './components/menu/menu'
-import Header from './components/header/header'
+import Menu from './components/menu'
+import Header from './components/header'
 import Link from 'next/link'
 
 export default function AdminDashboard() {

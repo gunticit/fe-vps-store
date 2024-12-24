@@ -1,3 +1,5 @@
+import { order, service, utilities } from '@/pages/modals/NavbarMenuItems'
+import Link from 'next/link'
 import React, { useState } from 'react'
 import { TbApps } from 'react-icons/tb'
 
@@ -7,14 +9,23 @@ const Notifications = () => {
   const togglePanel = () => {
     setIsPanelOpen(!isPanelOpen)
   }
-  const Notifi = [
-    { title: 'Vàng tăng giá', detail: 'Vàng 1 tỉ 1 cân', date: '11/12/2024' },
-    {
-      title: 'Mạnh có người yêu',
-      detail: 'Ai thì chưa biết',
-      date: '16/03/2003',
-    },
-  ]
+  const renderMenuItem = (
+    label: string,
+    items: { link: string; label: string }[],
+  ) => (
+    <ul className="mt-2 border-gray-200 pl-8 list-disc border-l md:border-none ml-4 h-full text-gray-600 md:text-black">
+      <div className=" space-y-4">
+        <h1 className="font-medium text-md">{label}</h1>
+        {items.map((item, index) => (
+          <li key={index} className="py-1 cursor-pointer text-sm">
+            <div className="flex flex-row justify-between hover:text-violet-900">
+              <Link href={item.link}>{item.label}</Link>
+            </div>
+          </li>
+        ))}
+      </div>
+    </ul>
+  )
   return (
     <div>
       {/* Button để mở panel */}
@@ -26,78 +37,18 @@ const Notifications = () => {
       </button>
 
       {isPanelOpen && (
-        <div className="absolute right-10 bg-white shadow-lg rounded-lg p-4 mt-4 max-w-6xl w-full xl:w-11/12 flex flex-row">
-          <ul className="pt-5">
-            {Notifi.map((notification, index) => (
-              <li
-                key={index}
-                className="p-2 border-gray-300 inline-flex gap-2 items-center"
-              >
-                <div>
-                  <div className="font-bold">{notification.title}</div>
-                  <div className="text-sm text-gray-500">
-                    {notification.detail}
-                  </div>
-                  <div className="text-xs text-gray-400">
-                    {notification.date}
-                  </div>
-                </div>
-              </li>
-            ))}
+        <div className="absolute right-10 md:right-0 bg-white shadow-lg rounded-lg p-4 mt-4 max-w-6xl w-full xl:w-11/12 md:w-full flex flex-row md:flex-col md:gap-6">
+          <ul className="w-1/4 p-2 items-start md:w-full">
+            <img src="/logo.png" alt="logo" className="w-full" />
           </ul>
-          <ul className="pt-5">
-            {Notifi.map((notification, index) => (
-              <li
-                key={index}
-                className="p-2 border-gray-300 inline-flex gap-2 items-center"
-              >
-                <div>
-                  <div className="font-bold">{notification.title}</div>
-                  <div className="text-sm text-gray-500">
-                    {notification.detail}
-                  </div>
-                  <div className="text-xs text-gray-400">
-                    {notification.date}
-                  </div>
-                </div>
-              </li>
-            ))}
+          <ul className="w-1/4 md:w-full">
+            {renderMenuItem('Dịch vụ', service)}
           </ul>
-          <ul className="pt-5">
-            {Notifi.map((notification, index) => (
-              <li
-                key={index}
-                className="p-2 border-gray-300 inline-flex gap-2 items-center"
-              >
-                <div>
-                  <div className="font-bold">{notification.title}</div>
-                  <div className="text-sm text-gray-500">
-                    {notification.detail}
-                  </div>
-                  <div className="text-xs text-gray-400">
-                    {notification.date}
-                  </div>
-                </div>
-              </li>
-            ))}
+          <ul className="w-1/4 md:w-full">
+            {renderMenuItem('Đơn hàng', order)}
           </ul>
-          <ul className="pt-5">
-            {Notifi.map((notification, index) => (
-              <li
-                key={index}
-                className="p-2 border-gray-300 inline-flex gap-2 items-center"
-              >
-                <div>
-                  <div className="font-bold">{notification.title}</div>
-                  <div className="text-sm text-gray-500">
-                    {notification.detail}
-                  </div>
-                  <div className="text-xs text-gray-400">
-                    {notification.date}
-                  </div>
-                </div>
-              </li>
-            ))}
+          <ul className="w-1/4 md:w-full">
+            {renderMenuItem('Tiện ích', utilities)}
           </ul>
         </div>
       )}

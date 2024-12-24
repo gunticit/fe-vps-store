@@ -10,6 +10,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { GetServerSideProps } from 'next'
 import * as yup from 'yup'
+import { useState } from 'react'
 
 const SignInFormSchema = yup.object().shape({
   email: yup.string().required(),
@@ -17,6 +18,7 @@ const SignInFormSchema = yup.object().shape({
 })
 export default function SignIn() {
   const { signIn } = useAuth()
+  const [isLogin, setIsLogin] = useState(false)
   const { register, handleSubmit, formState } = useForm<SignInData>({
     mode: 'onChange',
     resolver: yupResolver(SignInFormSchema),
@@ -24,6 +26,7 @@ export default function SignIn() {
 
   const { isValid } = formState
   const onSubmit: SubmitHandler<SignInData> = async ({ email, password }) => {
+    setIsLogin(!isLogin)
     await signIn({ email, password })
   }
 

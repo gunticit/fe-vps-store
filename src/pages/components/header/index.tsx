@@ -1,11 +1,11 @@
 import TextField from '@/components/ui/TextField'
 import { PiListBold } from 'react-icons/pi'
-import { LuSettings } from 'react-icons/lu'
 import { HiOutlineAdjustments } from 'react-icons/hi'
 import SearchBar from './SearchBar'
 import Notifications from './Notifications'
 import Languages from './Languages'
 import NavbarMenu from './NavbarMenu'
+import Auth from './Auth'
 interface HeaderProps {
   onMenuToggle: () => void
 }
@@ -42,14 +42,9 @@ export default function Header({ onMenuToggle }: HeaderProps) {
         <div className="z-20">
           <Notifications />
         </div>
-        <button className="p-1 px-3 rounded-full inline-flex items-center gap-2 bg-blue-100 md:p-1 md:w-12 md:h-12">
-          <img
-            src="https://thuvienanime.net/wp-content/uploads/2024/02/tao-dinh-cao-ying-thuvienanime-thumb.jpg"
-            alt="User"
-            className="w-10 h-10 rounded-full border"
-          />
-          <LuSettings className="w-5 h-5 text-blue-500 md:hidden" />
-        </button>
+        <div className="z-20">
+          <Auth />
+        </div>
       </div>
     </header>
   )
