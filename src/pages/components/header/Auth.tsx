@@ -2,13 +2,19 @@ import { User } from '@/types/user'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { LuSettings } from 'react-icons/lu'
+import { useAuth } from '@/hooks/useAuth'
+import Button from '@/components/ui/Button'
 
 const Auth = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false)
   const [isLogin, setIsLogin] = useState(false)
-  const [user, setUser] = useState<User | null>(null)
   const togglePanel = () => {
     setIsPanelOpen(!isPanelOpen)
+  }
+  const { user, signOut } = useAuth()
+
+  if (!user) {
+    return <p>Loading...</p>
   }
   return (
     <div>
@@ -41,6 +47,9 @@ const Auth = () => {
                   <Link href="/auth/settings" className="text-blue-500">
                     Cài đặt tài khoản
                   </Link>
+                  <Button className="w-full uppercase mt-10" onClick={signOut}>
+                    Sign out
+                  </Button>
                 </li>
               </>
             ) : (

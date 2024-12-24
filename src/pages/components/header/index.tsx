@@ -34,8 +34,10 @@ export default function Header({ onMenuToggle }: HeaderProps) {
           </div>
         </div>
       </div>
-      <div className="flex items-center space-x-4 z-20">
-        <NavbarMenu />
+      <div className="flex items-center space-x-4">
+        <div className="z-20">
+          <NavbarMenu />
+        </div>
         <div className="z-20">
           <Languages />
         </div>

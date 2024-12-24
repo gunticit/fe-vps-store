@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Menu from './components/menu'
 import Header from './components/header'
-import Link from 'next/link'
+import MainContents from './components/content/MainContents'
 
 export default function AdminDashboard() {
   const [menuOpen, setMenuOpen] = useState(true)
@@ -40,7 +40,7 @@ export default function AdminDashboard() {
     return null
   }
   return (
-    <div className="flex h-screen">
+    <div className="flex h-full bg-gray-100">
       <div
         ref={menuRef}
         className={`xl:block xl:fixed xl:top-0 xl:left-0 h-full bg-white transition-all ${
@@ -68,28 +68,9 @@ export default function AdminDashboard() {
         <div>
           <Header onMenuToggle={toggleMenu} />
         </div>
-        <main className="p-6">
-          <div className="grid grid-cols-3 gap-4">
-            <div className="bg-white p-4 rounded shadow">
-              <h2 className="text-lg font-bold">Gói Hosting</h2>
-              <Link
-                href="/admin"
-                className="hover:bg-violet-200 hover:text-violet-900 p-2 inline-flex items-center gap-4 w-full rounded-md"
-              >
-                Chính sách
-              </Link>
-              <p className="text-gray-500">0 Gói Hosting Đã Mua</p>
-            </div>
-            <div className="bg-white p-4 rounded shadow">
-              <h2 className="text-lg font-bold">Gói VPS</h2>
-              <p className="text-gray-500">0 Gói VPS Đã Mua</p>
-            </div>
-            <div className="bg-white p-4 rounded shadow">
-              <h2 className="text-lg font-bold">Tài Liệu</h2>
-              <p className="text-gray-500">0 Tài Liệu Đã Mua</p>
-            </div>
-          </div>
-        </main>
+        <div>
+          <MainContents />
+        </div>
       </div>
     </div>
   )

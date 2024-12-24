@@ -5,7 +5,6 @@ import { TbApps } from 'react-icons/tb'
 
 const Notifications = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false)
-
   const togglePanel = () => {
     setIsPanelOpen(!isPanelOpen)
   }
