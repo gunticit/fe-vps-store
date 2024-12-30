@@ -1,5 +1,5 @@
 import React from 'react'
-import { PiCubeDuotone } from '../../modals/MenuIcons'
+import { PiCubeDuotone } from '@/components/data/homePageAPI/MenuIcons'
 
 interface TopUpMenuProps {
   title: string
@@ -15,7 +15,7 @@ const TopUpMenu: React.FC<TopUpMenuProps> = ({
   buttonLink,
 }) => {
   return (
-    <nav className="w-full h-48 bg-blue-500 rounded-lg flex flex-col p-6 gap-2">
+    <nav className="w-full h-48 md:h-56 bg-blue-500 rounded-lg flex flex-col p-6 gap-2">
       <span className="font-medium text-md">{title}</span>
       <span className="opacity-75 text-sm">{description}</span>
       <a

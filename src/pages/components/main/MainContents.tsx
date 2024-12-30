@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { IoIosArrowForward } from 'react-icons/io'
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 import { AiOutlineCloudServer } from 'react-icons/ai'
 import { FaDatabase, FaLaptopCode } from 'react-icons/fa'
 import { SlEnvolopeLetter } from 'react-icons/sl'
@@ -16,7 +16,7 @@ type InfoCardProps = {
 }
 const InfoCard = ({ title, count, description, Icon }: InfoCardProps) => {
   return (
-    <div className="w-1/4 rounded-lg bg-white h-full p-4 inline-flex justify-between items-center font-medium">
+    <div className="w-1/4 md:w-full rounded-lg bg-white h-full p-4 inline-flex justify-between items-center font-medium">
       <div className="flex flex-col gap-3">
         <span>{title}</span>
         <span>{count}</span>
@@ -65,25 +65,27 @@ export default function MainContents() {
     date: '01/01/2025',
   }
   return (
-    <main className="p-6 px-3 flex flex-col gap-6 w-full">
-      <div className="flex flex-row gap-2 items-center w-full bg-white p-4 rounded-lg">
+    <main className="p-3 flex flex-col gap-6 w-full bg-gray-100 rounded-lg">
+      <div className="flex flex-row md:flex-col gap-2 items-center md:items-start w-full bg-white p-4 rounded-lg">
         <span className="font-medium text-base">Trang khách hàng </span>
-        <span className="text-xs">
-          <Link href="#" className="inline-flex items-center">
-            Home <IoIosArrowForward />
-          </Link>
-        </span>
-        <span className="text-xs">
-          <Link href="#" className="inline-flex items-center">
-            Trang tổng quan <IoIosArrowForward />
-          </Link>
-        </span>
-        <span className="text-xs">
-          <Link href="#">Phân tích</Link>
-        </span>
+        <div>
+          <span className="text-xs">
+            <Link href="#" className="inline-flex items-center">
+              Home <IoIosArrowForward />
+            </Link>
+          </span>
+          <span className="text-xs">
+            <Link href="#" className="inline-flex items-center">
+              Trang tổng quan <IoIosArrowForward />
+            </Link>
+          </span>
+          <span className="text-xs">
+            <Link href="#">Phân tích</Link>
+          </span>
+        </div>
       </div>
       <div className="flex flex-row gap-2 items-center w-full bg-white p-4 rounded-lg overflow-hidden">
-        <motion.span
+        {/* <motion.span
           className="whitespace-nowrap"
           animate={{ x: ['100%', '-100%'] }}
           transition={{
@@ -95,7 +97,11 @@ export default function MainContents() {
         >
           [DUCVPS.SHOP] Chào mừng bạn đến với DUCVPS.SHOP. Muốn nhận thêm
           voucher giảm giá vui lòng tham gia nhóm Hỗ Trợ Zalo !!!
-        </motion.span>
+        </motion.span> */}
+        <div>
+          [DUCVPS.SHOP] Chào mừng bạn đến với DUCVPS.SHOP. Muốn nhận thêm
+          voucher giảm giá vui lòng tham gia nhóm Hỗ Trợ Zalo !!!
+        </div>
       </div>
       {isVisible && (
         <div className="flex flex-row gap-2 items-center w-full bg-yellow-200 p-3 rounded-lg justify-between">
@@ -109,7 +115,7 @@ export default function MainContents() {
           <button onClick={handleClose}>x</button>
         </div>
       )}
-      <div className="w-full flex flex-row gap-8">
+      <div className="w-full flex flex-row gap-8 md:gap-4 md:flex-col">
         {data.map((item, index) => (
           <InfoCard
             key={index}
@@ -120,7 +126,7 @@ export default function MainContents() {
           />
         ))}
       </div>
-      <div className="w-auto flex flex-row gap-4">
+      <div className="w-auto flex flex-row gap-4 xl:flex-col">
         <RightContent {...infoData} />
         <LeftContent />
       </div>

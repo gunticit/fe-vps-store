@@ -3,7 +3,7 @@ import {
   TbFlag3Filled,
   TiDownload,
   PiCardsDuotone,
-} from '../../modals/MenuIcons'
+} from '@/components/data/homePageAPI/MenuIcons'
 import Link from 'next/link'
 
 interface UtilityMenuProps {

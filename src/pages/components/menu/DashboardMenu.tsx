@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
 import { HiMiniPresentationChartLine } from 'react-icons/hi2'
 import { IoIosArrowForward } from 'react-icons/io'
-import { addMoneyItems, dashboardMenuItems } from '../../modals/MenuContents'
+import {
+  addMoneyItems,
+  dashboardMenuItems,
+} from '@/components/data/homePageAPI/MenuContents'
 import Link from 'next/link'
 import {
   BsCurrencyDollar,
   LuChartNoAxesCombined,
-} from '@/pages/modals/MenuIcons'
+} from '@/components/data/homePageAPI/MenuIcons'
 
 export default function DashboardMenu() {
   const [activeMenu, setActiveMenu] = useState(false)
   const [activeContent, setActiveContent] = useState(false)
   return (
-    <nav className="space-y-2">
+    <nav className="space-y-2 w-fit">
       <h1 className="text-black font-medium">Bảng hệ thống</h1>
       <ul className="space-y-1 text-[#616161]">
         <li>

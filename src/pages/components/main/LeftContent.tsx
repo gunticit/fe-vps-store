@@ -24,12 +24,14 @@ const LeftContent = () => {
     bg: string,
   ) => (
     <div
-      className={`flex flex-row gap-8 justify-between items-center bg-white p-6 px-6 w-full text-sm ${css}`}
+      className={`flex flex-row gap-8 items-center bg-white p-6 px-6 w-full text-sm ${css}`}
     >
-      <div className={`p-2 ${bg} rounded-lg`}>
-        <Icon className={`${cssIcon}`} />
+      <div className={`md:w-4/12`}>
+        <div className={`p-2 ${bg} rounded-lg w-fit`}>
+          <Icon className={`${cssIcon}`} />
+        </div>
       </div>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center md:items-start md:w-8/12">
         <span className="font-medium">
           {count}
           {typeof count === 'number' ? 'đ' : ''}
@@ -39,10 +41,10 @@ const LeftContent = () => {
     </div>
   )
   return (
-    <div className="w-4/12 gap-6 flex flex-col">
+    <div className="w-4/12 gap-6 flex flex-col xl:w-full">
       <div>
-        <div className="flex flex-row">
-          <Link href="#" className=" w-1/2 h-full">
+        <div className="flex flex-row md:flex-col">
+          <Link href="#" className=" w-1/2 md:w-full h-full">
             {moneyDetail(
               0,
               'SỐ DƯ',
@@ -52,7 +54,7 @@ const LeftContent = () => {
               'bg-violet-200',
             )}
           </Link>
-          <Link href="#" className="w-1/2 h-full">
+          <Link href="#" className="w-1/2 md:w-full h-full">
             {moneyDetail(
               0,
               'TỔNG NẠP',
@@ -63,8 +65,8 @@ const LeftContent = () => {
             )}
           </Link>
         </div>
-        <div className="flex flex-row">
-          <Link href="#" className=" w-1/2 h-full">
+        <div className="flex flex-row md:flex-col">
+          <Link href="#" className=" w-1/2 md:w-full h-full">
             {moneyDetail(
               0,
               'CHI TIÊU',
@@ -74,7 +76,7 @@ const LeftContent = () => {
               'bg-green-200',
             )}
           </Link>
-          <Link href="#" className=" w-1/2 h-full">
+          <Link href="#" className=" w-1/2 md:w-full h-full">
             {moneyDetail(
               'Member',
               'CHỨC VỤ',

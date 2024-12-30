@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Menu from './components/menu'
 import Header from './components/header'
-import MainContents from './components/content/MainContents'
+import MainContents from './components/main/MainContents'
+import Footer from './components/footer'
 
 export default function AdminDashboard() {
   const [menuOpen, setMenuOpen] = useState(true)
@@ -40,36 +41,34 @@ export default function AdminDashboard() {
     return null
   }
   return (
-    <div className="flex h-full bg-gray-100">
+    <div className="flex h-full bg-white overflow-hidden">
       <div
         ref={menuRef}
-        className={`xl:block xl:fixed xl:top-0 xl:left-0 h-full bg-white transition-all ${
+        className={`h-full bg-white transition-all ${
           menuOpen
             ? 'xl:z-10 xl:pointer-events-auto'
             : 'z-0 pointer-events-none'
         }`}
       >
-        {menuOpen && (
-          <div>
-            <img
-              src="/logo.png"
-              alt="Logo"
-              className="h-20 bg-white w-fit px-4 xl:w-64"
-            />
-            <Menu />
-          </div>
-        )}
+        {menuOpen && <Menu />}
       </div>
       <div
-        className={`flex-1 bg-gray-100 transition-all  ${
+        className={`flex-1 transition-all  ${
           menuOpen ? 'xl:opacity-95 xl:blur-sm' : 'opacity-100'
         }`}
       >
-        <div>
-          <Header onMenuToggle={toggleMenu} />
+        <div className={`fixed top-0 right-0 w-full`}>
+          <Header onMenuToggle={toggleMenu} isMenuOpen={menuOpen} />
+        </div>
+        <div
+          className={`${
+            menuOpen ? 'w-10/12 xl:w-full p-2 xl:p-0' : 'w-full'
+          } md:p-4 xl:p-2 mt-20 flex ml-auto`}
+        >
+          <MainContents />
         </div>
         <div>
-          <MainContents />
+          <Footer />
         </div>
       </div>
     </div>

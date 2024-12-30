@@ -1,12 +1,38 @@
-import { order, service, utilities } from '@/pages/modals/NavbarMenuItems'
+import {
+  order,
+  service,
+  utilities,
+} from '@/components/data/homePageAPI/NavbarMenuItems'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { TbApps } from 'react-icons/tb'
 
 const Notifications = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false)
   const togglePanel = () => {
     setIsPanelOpen(!isPanelOpen)
+  }
+  const [isClient, setIsClient] = useState(false)
+  const menuRef = useRef(null)
+  useEffect(() => {
+    setIsClient(true)
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        window.innerWidth < 1280
+      ) {
+        setIsPanelOpen(false)
+      }
+    }
+    window.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
+  if (!isClient) {
+    return null
   }
   const renderMenuItem = (
     label: string,
@@ -26,7 +52,7 @@ const Notifications = () => {
     </ul>
   )
   return (
-    <div>
+    <div ref={menuRef}>
       {/* Button để mở panel */}
       <button
         onClick={togglePanel}
@@ -36,7 +62,7 @@ const Notifications = () => {
       </button>
 
       {isPanelOpen && (
-        <div className="absolute right-10 md:right-0 bg-white shadow-lg rounded-lg p-4 mt-4 max-w-6xl w-full xl:w-11/12 md:w-full flex flex-row md:flex-col md:gap-6">
+        <div className="absolute right-10 md:right-4 bg-white shadow-lg rounded-lg p-4 mt-4 max-w-6xl w-full md:h-screen md:mb-auto xl:w-10/12 md:w-11/12 flex flex-row md:flex-col md:gap-6 overflow-y-scroll">
           <ul className="w-1/4 p-2 items-start md:w-full">
             <img src="/logo.png" alt="logo" className="w-full" />
           </ul>

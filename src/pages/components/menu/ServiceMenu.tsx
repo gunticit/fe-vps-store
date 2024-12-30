@@ -8,8 +8,8 @@ import {
   hostingListItems,
   vpsListItems,
   sourceListItems,
-} from '../../modals/MenuContents'
-import { FaShoppingBasket } from '../../modals/MenuIcons'
+} from '@/components/data/homePageAPI/MenuContents'
+import { FaShoppingBasket } from '@/components/data/homePageAPI/MenuIcons'
 import Link from 'next/link'
 
 interface ServiceMenuProps {

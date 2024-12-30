@@ -6,13 +6,19 @@ import Notifications from './Notifications'
 import Languages from './Languages'
 import NavbarMenu from './NavbarMenu'
 import Auth from './Auth'
+import Link from 'next/link'
 interface HeaderProps {
   onMenuToggle: () => void
+  isMenuOpen: Boolean
 }
 
-export default function Header({ onMenuToggle }: HeaderProps) {
+export default function Header({ onMenuToggle, isMenuOpen }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between bg-white p-4 w-full h-20">
+    <header
+      className={`flex items-center justify-between bg-white p-4 ${
+        isMenuOpen ? 'w-10/12' : 'w-full'
+      } h-20 ml-auto`}
+    >
       <div className="flex items-center space-x-4">
         <button
           onClick={onMenuToggle}
@@ -20,6 +26,9 @@ export default function Header({ onMenuToggle }: HeaderProps) {
         >
           <PiListBold className="w-4 h-4" />
         </button>
+        <Link href="/src/paymentage" className="text-black">
+          manh
+        </Link>
         <button className="z-20 hidden md:block">
           <SearchBar />
         </button>
@@ -35,7 +44,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
         </div>
       </div>
       <div className="flex items-center space-x-4">
-        <div className="z-20">
+        <div>
           <NavbarMenu />
         </div>
         <div className="z-20">

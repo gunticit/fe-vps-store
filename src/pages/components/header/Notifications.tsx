@@ -1,9 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { HiOutlineBell } from 'react-icons/hi'
 
 const Notifications = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false)
+  const [isClient, setIsClient] = useState(false)
+  const menuRef = useRef(null)
+  useEffect(() => {
+    setIsClient(true)
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        window.innerWidth < 1280
+      ) {
+        setIsPanelOpen(false)
+      }
+    }
+    window.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
 
+  if (!isClient) {
+    return null
+  }
   const togglePanel = () => {
     setIsPanelOpen(!isPanelOpen)
   }
@@ -16,7 +37,7 @@ const Notifications = () => {
     },
   ]
   return (
-    <div>
+    <div ref={menuRef}>
       {/* Button để mở panel */}
       <button
         onClick={togglePanel}

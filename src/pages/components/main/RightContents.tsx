@@ -6,8 +6,8 @@ type AccountProp = {
 
 export default function RightContent({ image, name, date }: AccountProp) {
   return (
-    <div className="w-8/12 flex flex-col gap-4 bg-white p-4 rounded-lg">
-      <div className="flex items-center gap-4 p-4 bg-gray-100 rounded-lg">
+    <div className="w-8/12 xl:w-full flex flex-col gap-4 bg-white p-4 rounded-lg">
+      <div className="flex items-center gap-4 p-4 rounded-lg">
         <img
           src={image}
           alt={name}
@@ -18,6 +18,7 @@ export default function RightContent({ image, name, date }: AccountProp) {
           <p className="text-sm text-gray-500">{date}</p>
         </div>
       </div>
+      <div className="w-full border"></div>
       <div className="w-full">
         <div className="flex flex-col ">
           <span>

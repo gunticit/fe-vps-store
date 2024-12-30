@@ -22,7 +22,7 @@ export const sourceMenuItems = [
 ]
 
 export const cronJobsMenuItems = [
-  { label: 'Danh sách Server', link: '#' },
+  { label: 'Danh sách Server', link: '/src/paymentage' },
   { label: 'Cron đã thuê', link: '#' },
 ]
 
