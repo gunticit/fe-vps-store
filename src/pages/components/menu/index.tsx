@@ -2,11 +2,14 @@ import ServiceMenu from './ServiceMenu'
 import UtilityMenu from './UtilityMenu'
 import TopUpMenu from './TopUpMenu'
 import DashboardMenu from './DashboardMenu'
+import Link from 'next/link'
 
 export default function Menu() {
   return (
-    <aside className="fixed top-0 left-0 bg-white w-2/12 xl:w-4/12 md:w-7/12 h-full px-4 space-y-4 pb-32">
-      <img src="/logo.png" alt="Logo" className="h-20 bg-white xl:h-auto" />
+    <div className="fixed top-0 left-0 bg-white w-2/12 xl:w-4/12 md:w-7/12 h-full px-4 space-y-4 pb-32 z-30">
+      <Link href="/" className="h-20 bg-white xl:h-auto">
+        <img src="/logo.png" alt="Logo" />
+      </Link>
       <div
         className="h-full w-full overflow-y-auto"
         style={{
@@ -24,6 +27,6 @@ export default function Menu() {
           buttonLink="#"
         />
       </div>
-    </aside>
+    </div>
   )
 }

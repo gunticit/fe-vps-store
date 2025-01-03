@@ -6,7 +6,6 @@ import Notifications from './Notifications'
 import Languages from './Languages'
 import NavbarMenu from './NavbarMenu'
 import Auth from './Auth'
-import Link from 'next/link'
 interface HeaderProps {
   onMenuToggle: () => void
   isMenuOpen: Boolean
@@ -26,9 +25,6 @@ export default function Header({ onMenuToggle, isMenuOpen }: HeaderProps) {
         >
           <PiListBold className="w-4 h-4" />
         </button>
-        <Link href="/src/paymentage" className="text-black">
-          manh
-        </Link>
         <button className="z-20 hidden md:block">
           <SearchBar />
         </button>

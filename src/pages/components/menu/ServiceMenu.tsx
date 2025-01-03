@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { IoIosArrowForward } from 'react-icons/io'
+import { useRouter } from 'next/router'
 import {
   hostingMenuItems,
   vpsMenuItems,
@@ -10,7 +11,7 @@ import {
   sourceListItems,
 } from '@/components/data/homePageAPI/MenuContents'
 import { FaShoppingBasket } from '@/components/data/homePageAPI/MenuIcons'
-import Link from 'next/link'
+// import Link from 'next/link'
 
 interface ServiceMenuProps {
   title: string
@@ -34,7 +35,7 @@ const ServiceMenu: React.FC<ServiceMenuProps> = ({ title }) => {
     if (label === 'Kho mã nguồn') return sourceListItems
     return []
   }
-
+  const router = useRouter()
   const renderMenuItem = (
     menuId: string,
     label: string,
@@ -60,7 +61,15 @@ const ServiceMenu: React.FC<ServiceMenuProps> = ({ title }) => {
           {items.map((item, index) => (
             <li key={index} className="py-1 cursor-pointer">
               <div className="flex flex-row justify-between hover:text-violet-900">
-                <Link href={item.link}>{item.label}</Link>
+                {/* <Link href={item.link}>{item.label}</Link> */}
+                <button
+                  onClick={(event) => {
+                    event.preventDefault()
+                    router.push(item.link)
+                  }}
+                >
+                  {item.label}
+                </button>
                 {[
                   'Danh sách Hosting',
                   'Danh sách VPS',
@@ -89,7 +98,15 @@ const ServiceMenu: React.FC<ServiceMenuProps> = ({ title }) => {
                           key={subIndex}
                           className="py-1 hover:text-violet-900 cursor-pointer"
                         >
-                          <Link href={subItem.link}>{subItem.label}</Link>
+                          <button
+                            onClick={(event) => {
+                              event.preventDefault()
+                              router.push(subItem.link)
+                            }}
+                          >
+                            {subItem.label}
+                          </button>
+                          {/* <Link href={subItem.link}>{subItem.label}</Link> */}
                         </li>
                       ))}
                     </ul>

@@ -65,7 +65,7 @@ export default function MainContents() {
     date: '01/01/2025',
   }
   return (
-    <main className="p-3 flex flex-col gap-6 w-full bg-gray-100 rounded-lg">
+    <main className="flex flex-col gap-6 w-full bg-gray-100 ">
       <div className="flex flex-row md:flex-col gap-2 items-center md:items-start w-full bg-white p-4 rounded-lg">
         <span className="font-medium text-base">Trang khách hàng </span>
         <div>

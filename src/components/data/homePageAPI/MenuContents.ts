@@ -1,6 +1,9 @@
 export const dashboardMenuItems = [
   { label: 'Nạp Tiền', link: '#' },
-  { label: 'Thông Tin Tài Khoản', link: '#' },
+  {
+    label: 'Thông Tin Tài Khoản',
+    link: '/components/menu/menucontents/dashboard/account',
+  },
   { label: 'Biến Động Số Dư', link: '#' },
   { label: 'Lịch Sử Hoạt Động', link: '#' },
   { label: 'Thay Đổi Mật Khẩu', link: '#' },
@@ -22,21 +25,24 @@ export const sourceMenuItems = [
 ]
 
 export const cronJobsMenuItems = [
-  { label: 'Danh sách Server', link: '/src/paymentage' },
+  { label: 'Danh sách Server', link: '#' },
   { label: 'Cron đã thuê', link: '#' },
 ]
 
 export const addMoneyItems = [
   { label: 'Nạp thẻ cào', link: '#' },
-  { label: 'Nạp ngân hàng', link: '#' },
+  {
+    label: 'Nạp ngân hàng',
+    link: '/components/menu/menucontents/dashboard/deposit',
+  },
 ]
 
 export const hostingListItems = [
   { label: 'Hosting Basic', link: '#' },
-  { label: 'Hosting Cheap', link: '#' },
-  { label: 'Hosting V3', link: '#' },
-  { label: 'Hosting V4', link: '#' },
-  { label: 'Hosting V5', link: '#' },
+  { label: 'Hosting Cheap', link: 'testa' },
+  { label: 'Hosting V3', link: 'testc' },
+  { label: 'Hosting V4', link: 'testd' },
+  { label: 'Hosting V5', link: 'teste' },
 ]
 
 export const vpsListItems = [
