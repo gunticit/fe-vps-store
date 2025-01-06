@@ -15,21 +15,6 @@ interface ActiveTabPops {
 }
 
 export default function Account() {
-  // const [activeTab, setActiveTab] = useState<string>('')
-  // const renderContents = () => {
-  //   switch (activeTab) {
-  //     case 'info':
-  //       return <Info />
-  //     case 'changepassword':
-  //       return <Changepassword />
-  //     case 'balancehistory':
-  //       return <BalanceHistory />
-  //     case 'onlinehistory':
-  //       return <Onlinehistory />
-  //     default:
-  //       return <Info />
-  //   }
-  // }
   const [activeTab, setActiveTab] = useState<string>('info')
 
   const tabs: Record<string, ActiveTabPops> = {

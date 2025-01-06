@@ -76,7 +76,7 @@ export default function DashboardMenu() {
         <li>
           <Link
             className="hover:bg-violet-200 hover:text-violet-900 p-2 rounded-md inline-flex items-center w-full justify-between"
-            href="#"
+            href="/components/menu/menucontents/dashboard/discount"
           >
             <div className="inline-flex items-center gap-4">
               <div className="w-fit">
@@ -89,7 +89,7 @@ export default function DashboardMenu() {
         <li>
           <Link
             className="hover:bg-violet-200 hover:text-violet-900 p-2 rounded-md inline-flex items-center w-full justify-between"
-            href="#"
+            href="/components/menu/menucontents/dashboard/marketing"
           >
             <div className="inline-flex items-center gap-4">
               <LuChartNoAxesCombined />
