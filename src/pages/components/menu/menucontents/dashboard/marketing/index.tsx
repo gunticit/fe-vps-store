@@ -1,9 +1,9 @@
-import Link from 'next/link'
 import { useState } from 'react'
-import { IoIosArrowForward } from 'react-icons/io'
 import Overview from './Overview'
 import Member from './Member'
 import Withdraw from './Withdraw'
+import History from './History'
+import { Navigate } from '../../../TopUpMenu'
 interface ActiveTabPops {
   label: string
   // eslint-disable-next-line no-undef
@@ -27,31 +27,14 @@ export default function Info() {
     },
     onlinehistory: {
       label: 'Lịch sử Online',
-      component: <Overview />,
+      component: <History />,
     },
   }
 
   const activeTabContent = tabs[activeTab]
   return (
     <div className="w-full h-full flex flex-col gap-6">
-      <div className="flex flex-row md:flex-col gap-2 items-center md:items-start w-full bg-white p-6 rounded-lg">
-        <span className="font-medium text-base">Tiếp Thị Liên Kết</span>
-        <div>
-          <span className="text-xs">
-            <Link href="#" className="inline-flex items-center">
-              Home <IoIosArrowForward />
-            </Link>
-          </span>
-          <span className="text-xs">
-            <Link href="#" className="inline-flex items-center">
-              Bảng điều khiển <IoIosArrowForward />
-            </Link>
-          </span>
-          <span className="text-xs">
-            <Link href="#">Tiếp Thị Liên Kết</Link>
-          </span>
-        </div>
-      </div>
+      <Navigate title="Tiếp Thị Liên Kết" lastnavigate="Tiếp Thị Liên Kết" />
       <div className="w-full flex flex-col overflow-x-hidden">
         <div className="w-full inline-flex gap-8 font-medium mb-6 bg-white rounded-lg p-6">
           <button

@@ -46,6 +46,9 @@ export default function Withdraw() {
               value=""
               className="p-2 rounded-md border"
             />
+            <button className="p-2 w-24 bg-[#2196f3] rounded-md text-white">
+              Rút ngay
+            </button>
           </div>
         </div>
         <div className="flex flex-col bg-white w-7/12 rounded-lg p-4 h-fit">
@@ -69,6 +72,24 @@ export default function Withdraw() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+      <div className="flex flex-col w-full gap-6">
+        <div className="flex flex-col bg-white w-full rounded-lg p-4">
+          <span className="text-md font-medium">
+            DANH SÁCH BẠN BÈ ĐƯỢC BẠN GIỚI THIỆU
+          </span>
+          <div className="w-full border my-4"></div>
+          <table>
+            <tr className="border text-sm">
+              <th className="border-r p-3">#</th>
+              <th className="border-r p-3">SỐ TIỀN RÚT</th>
+              <th className="border-r p-3">NGÂN HÀNG</th>
+              <th className="border-r p-3">THỜI GIAN</th>
+              <th className="border-r p-3">TRẠNG THÁI</th>
+              <th className="border-r p-3">LÝ DO</th>
+            </tr>
+          </table>
         </div>
       </div>
     </div>

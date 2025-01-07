@@ -1,5 +1,7 @@
 import React from 'react'
 import { PiCubeDuotone } from '@/components/data/homePageAPI/MenuIcons'
+import { IoIosArrowForward } from 'react-icons/io'
+import Link from 'next/link'
 
 interface TopUpMenuProps {
   title: string
@@ -7,7 +9,32 @@ interface TopUpMenuProps {
   buttonLabel: string
   buttonLink: string
 }
-
+interface NavigateProps {
+  title: string
+  lastnavigate: string
+}
+export const Navigate = ({ title, lastnavigate }: NavigateProps) => {
+  return (
+    <div className="flex flex-row md:flex-col gap-2 items-center md:items-start w-full bg-white p-6 rounded-lg">
+      <span className="font-medium text-base">{title}</span>
+      <div className="inline-flex gap-2">
+        <span className="text-xs">
+          <Link href="#" className="inline-flex items-center">
+            Home <IoIosArrowForward />
+          </Link>
+        </span>
+        <span className="text-xs">
+          <Link href="#" className="inline-flex items-center">
+            Bảng điều khiển <IoIosArrowForward />
+          </Link>
+        </span>
+        <span className="text-xs">
+          <Link href="#">{lastnavigate}</Link>
+        </span>
+      </div>
+    </div>
+  )
+}
 const TopUpMenu: React.FC<TopUpMenuProps> = ({
   title,
   description,

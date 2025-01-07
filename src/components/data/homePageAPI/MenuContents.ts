@@ -38,11 +38,26 @@ export const addMoneyItems = [
 ]
 
 export const hostingListItems = [
-  { label: 'Hosting Basic', link: '#' },
-  { label: 'Hosting Cheap', link: 'testa' },
-  { label: 'Hosting V3', link: 'testc' },
-  { label: 'Hosting V4', link: 'testd' },
-  { label: 'Hosting V5', link: 'teste' },
+  {
+    label: 'Hosting Basic',
+    link: '/components/menu/menucontents/service/hosting?type=basic',
+  },
+  {
+    label: 'Hosting Cheap',
+    link: '/components/menu/menucontents/service/hosting?type=cheap',
+  },
+  {
+    label: 'Hosting V3',
+    link: '/components/menu/menucontents/service/hosting?type=v3',
+  },
+  {
+    label: 'Hosting V4',
+    link: '/components/menu/menucontents/service/hosting?type=v4',
+  },
+  {
+    label: 'Hosting V5',
+    link: '/components/menu/menucontents/service/hosting?type=v5',
+  },
 ]
 
 export const vpsListItems = [
